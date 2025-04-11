@@ -1,0 +1,29 @@
+# Essential Libraries
+numpy
+pandas
+python-dotenv
+openai
+pypdf
+libmagic
+unstructured
+unstructured[pdf]
+tiktoken
+tqdm
+# pinecone
+groq
+streamlit
+faiss-cpu
+
+# LangChain and related integrations
+langchain
+langchain-community
+# langchain-unstructured
+langchain-nomic
+# langchain-openai
+# langchain_ollama
+# langchain-pinecone
+langchain-groq
+
+pydantic==1.10.13
+
+# pinecone-plugin-inference==0.0.0  # Prevent deprecated package from installing
