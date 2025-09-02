@@ -22,6 +22,8 @@ load_dotenv()
 
 vectorstore_folder = "faiss_store_rag.pkl"
 NOMIC_API_KEY = os.environ['NOMIC_API_KEY']
+if not NOMIC_API_KEY:
+    NOMIC_API_KEY=os.getenv('NOMIC_API_KEY')
 
 st.set_page_config(page_title="Article Analyzer", page_icon="📰")
 st.title("Article Analyzer")
@@ -178,4 +180,5 @@ if not st.session_state.retriever and os.path.exists(vectorstore_folder):
 
 llm_groq = ChatGroq(model="llama-3.3-70b-versatile",temperature=0.9,max_retries=2)
 if st.session_state.is_processed and st.session_state.retriever:
+
     ask_question(st.session_state.retriever,llm_groq)
